@@ -1,0 +1,19 @@
+{
+  "id": "png-metadata",
+  "version": "1.4.0",
+  "platform": "all",
+  "arch": "all",
+  "name": "PNG metadata",
+  "logo": "/logo.png",
+  "keywords": ["png", "metadata", "parameters", "source", "stable diffusion", "itxt"],
+  "devTools": true,
+  "preview": {
+    "png": {
+      "inspector": {
+        "path": "index.html",
+        "height": 220,
+        "multiSelect": false
+      }
+    }
+  }
+}

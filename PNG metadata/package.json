@@ -1,0 +1,8 @@
+{
+  "name": "eagle-png-parameters-inspector",
+  "version": "1.4.0",
+  "private": true,
+  "scripts": {
+    "test": "node tests/png-text.test.js"
+  }
+}

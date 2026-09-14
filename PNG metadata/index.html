@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PNG metadata</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #3b3c40;
+      --panel: #2a2b2f;
+      --field: #242528;
+      --text: #f2f2f3;
+      --muted: #b8bac1;
+      --border: #4a4b50;
+      --accent: #8fb2ff;
+      --accent-soft: #3b465d;
+      --error: #ffaaa0;
+    }
+
+    body[theme="LIGHT"],
+    body[theme="LIGHTGRAY"] {
+      --bg: #ffffff;
+      --panel: #f5f6f8;
+      --field: #ffffff;
+      --text: #202124;
+      --muted: #6b7280;
+      --border: #d9dce3;
+      --accent: #2563eb;
+      --accent-soft: #e8f0ff;
+      --error: #b42318;
+    }
+
+    html {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 11px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      min-width: 0;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .panel {
+      box-sizing: border-box;
+      min-height: 180px;
+      max-height: 360px;
+      padding: 0 7px 10px;
+    }
+
+    .chip {
+      flex: 0 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 5px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.2;
+    }
+
+    .content {
+      min-height: 0;
+      overflow: auto;
+    }
+
+    .status {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .status.error {
+      color: var(--error);
+    }
+
+    .prompt {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+      color: var(--text);
+      background: var(--field);
+      font: inherit;
+      font-size: 12px;
+      line-height: 1.45;
+      user-select: text;
+    }
+
+    .copyable {
+      cursor: copy;
+      transition: border-color 120ms ease, background 120ms ease;
+    }
+
+    .copyable:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .copyable:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .field {
+      margin: 0 0 8px;
+    }
+
+    .label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 650;
+      line-height: 1.3;
+    }
+
+    .sync {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.3;
+    }
+
+    .copy-status {
+      margin: 4px 0 0;
+      min-height: 13px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.3;
+    }
+
+    details {
+      margin-top: 8px;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .duplicate {
+      margin-top: 6px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px;
+      background: var(--field);
+    }
+
+    .duplicate-meta {
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.3;
+    }
+
+    .duplicate-text {
+      margin: 0;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+      font: inherit;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <section class="panel" aria-label="PNG metadata">
+    <main id="content" class="content">
+      <p class="status">Select a PNG file.</p>
+    </main>
+  </section>
+  <script src="js/png-text.js"></script>
+  <script src="js/inspector.js"></script>
+</body>
+</html>
