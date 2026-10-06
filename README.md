@@ -60,4 +60,5 @@ The plugin uses:
 - Node's `fs.promises.readFile()` to read the selected file.
 - tolerant path detection across common Eagle item fields: `filePath`, `path`, `url`, and `fileURL`.
 
-It does not modify Eagle metadata or image files.
+It updates an Eagle item's URL field only when that field is empty and a valid
+source URL is present in the PNG. It does not modify image files.
