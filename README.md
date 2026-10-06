@@ -1,4 +1,5 @@
 # PNG metadata
+n![PNG metadata](docs/cover.jpg)
 
 Minimal Eagle inspector plugin that reads PNG textual metadata from the selected local file and shows Stable Diffusion-style `Parameters` / `parameters` prompts, including UTF-8 Cyrillic stored in `iTXt`.
 
